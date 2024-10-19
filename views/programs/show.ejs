@@ -1,0 +1,49 @@
+<%layout("../layouts/boilerplate.ejs") -%>
+
+<body>
+    <div class="show">    
+    <div class="showcard ">
+        <div class="image-container">
+            <img src="<%= program.imageUrl2 %>" class="card-img" alt="...">
+        </div>
+        <div class="card-desc">
+            <p><%=program.description %></p>
+        </div>
+    <div>
+
+        <div class="text-container">
+            
+                <% program.sections.forEach((section, index) => { %>
+                    
+                    <div class="song-desc" >
+                        <% if (section.songUrl) { %>
+                            <a href="/program/<%= program._id %>/song/<%= index %>">
+                                <h4><%= section.title %></h4>
+                                <p><%= section.content %></p>
+                            </a>
+                              <% } else { %>
+                                <p>No song available</p>
+                              <% } %>
+                        <hr>
+                    </div>
+                
+                <% }) %>
+            
+            <hr>
+            
+    </div>
+</div>
+</div>
+
+<div class="back-button" onclick="goBack()">
+    <i class="fas fa-arrow-left"></i> Back
+</div>
+
+
+
+</body>
+    <script>
+    function goBack() {
+        window.history.back(); 
+    }
+    </script>

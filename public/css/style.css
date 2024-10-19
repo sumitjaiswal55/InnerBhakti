@@ -1,0 +1,306 @@
+body, html {
+    padding: 0px;
+    margin: 0px;
+    height: 100vh !important;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.logo{
+    width: 12rem;
+    padding-top: 20px; 
+    padding-left: 8px;
+}
+
+.navbar{
+    display: flex;
+    padding: 20px;
+}
+
+.navbar i{
+    padding-right: 20px;
+
+}
+
+
+.container{
+    max-width: 100% !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.indexpage{
+    background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,1) 85%, rgba(250,210,185,1) 100%);
+}
+
+
+  .row, .container {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+
+
+.card{
+
+    display: flex;
+    justify-content: center;
+    border: none;
+    margin: 10px 0px 10px 0px;
+    
+}
+
+.card-img-top{
+    
+    opacity: 0.85;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100% !important;
+    height: 10rem !important;
+    border-radius: 1rem !important;
+    object-fit: cover !important;
+}
+
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
+.show{
+    background-color: #141414;
+    min-height: 100vh !important;
+}
+
+.showcard{
+    width: 100%;
+    object-fit: cover; 
+    border: none !important;
+    border-radius: none;
+
+}
+
+.card-desc{
+    background-color: #282832;
+    color: rgb(255, 255, 255);
+    border-radius: none;
+    padding: 10px;
+}
+
+
+
+.text-container {
+    color: rgb(255, 255, 255);
+    background-color: #141414;
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.song-desc{
+    padding-left: 15px;
+    padding-top: 2px;
+}
+
+.song-desc h4{
+    font-size: large;
+    color: aliceblue;
+}
+
+.song-desc p{
+    font-size: medium;
+    color: aliceblue;
+}
+
+.song-desc a{
+    text-decoration: none;
+}
+
+.card-img-overlay h5{
+    position: absolute;
+    bottom: 25px;
+    color: rgb(253, 253, 253);
+    text-align: center;
+}
+
+.card-img-overlay p{
+    position: absolute;
+    bottom: 0px;
+    color: rgb(253, 253, 253);
+    text-align: center;
+    opacity: 0.85;
+}
+
+.indexcard {
+    width: 10rem;
+    margin: 5px; /*Keep the cards centered */
+    padding: 0px 5px 0px 5px;   /* Remove padding */
+    max-width: 100%; 
+    position: relative; /* Make sure the card image container is positioned relative for absolute positioning of overlay */
+}
+
+
+.footer{
+    height: 100px;
+    background-color: aqua;
+    bottom: 0px;
+    display: flex;
+}
+
+.icon{
+    height: 20px;
+}
+
+.background {
+    height: 100vh; /* Full viewport height */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+  }
+  
+.audio-player{
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+
+.song-text{
+    padding-top: 100px;
+    font-family: Geneva, Verdana, sans-serif;
+}
+
+.song-text p{
+    font-size: small !important;
+}
+
+.song-player{
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+audio {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #f8f8f8; /* Customize background */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a 3D effect */
+    outline: none; /* Remove outline when focused */
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #333; /* Change the background color of the controls (Chrome/Safari) */
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider {
+    filter: invert(100%); /* Inverts the color of buttons, useful for dark mode */
+}
+
+
+.custom-audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#seekbar {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#playPauseBtn {
+    background-color: #f8f8f8;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#playPauseBtn i {
+    font-size: 20px;
+}
+
+#currentTime, #duration {
+    font-family: 'Arial', sans-serif;
+}
+
+
+.footer-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 0;
+    box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item .nav-icon {
+    width: 24px; 
+    height: 24px;
+    margin-bottom: 5px;
+}
+
+.nav-item .nav-label {
+    font-size: 14px;
+    color: #333; 
+}
+
+.nav-item.active .nav-icon {
+    background-color: #ff6b00; 
+    border-radius: 50%; 
+    padding: 10px;
+}
+
+.active .nav-label{
+    color: #ff6b00; 
+}
+
+.back-button{
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+
+}
+
+.back-button i {
+    margin-left: 8px; /* Spacing between arrow and text */
+}
+
+.songback{
+    padding-top: 20px;
+}
+
+.active{
+    color: #ff6b00; 
+}

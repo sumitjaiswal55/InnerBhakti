@@ -1,0 +1,95 @@
+<%layout("../layouts/boilerplate.ejs") -%>
+
+<body>
+      <div class="audio-player">
+        
+        <div class="background" style="background-image: url('<%=program.imageUrl %>');">
+          <div class="back-button songback" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i> 
+        </div> 
+          <div class="song-text">
+            <b><h1><%= song.songTitle %></h1></b>
+            <p><%= song.songDesc %></p>
+          </div>  
+          
+        
+
+          <div class="custom-audio-player song-player">
+            <i class="fa-regular fa-heart"></i>
+
+            <input type="range" id="seekbar" value="0" max="100">
+            <div class="audio-controls">
+                <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                  <br> <br>
+                <button id="playPauseBtn">
+                  ⏸️
+                </button><br>
+            </div>
+            <audio autoplay id="audioPlayer" src="<%= song.songUrl %>"></audio>
+          </div>
+      </div>
+    </div>
+    <script>
+      const audioPlayer = document.getElementById("audioPlayer");
+      const playPauseBtn = document.getElementById("playPauseBtn");
+      const seekbar = document.getElementById("seekbar");
+      const currentTimeSpan = document.getElementById("currentTime");
+      const durationSpan = document.getElementById("duration");
+
+
+        // Set the initial state of the button to pause since autoplay is active
+          window.addEventListener("load", () => {
+          audioPlayer.play();
+          playPauseBtn.textContent = "⏸"; // Show pause icon on load because the song is autoplaying
+          });
+
+
+      // Play/Pause button toggle functionality
+            playPauseBtn.addEventListener("click", () => {
+              if (audioPlayer.paused) {
+              audioPlayer.play();
+              playPauseBtn.textContent = "⏸️"; // Switch to pause icon when playing
+            } else {
+              audioPlayer.pause();
+              playPauseBtn.textContent = "▶️"; // Switch to play icon when paused
+            }
+});
+
+          // Update progress bar and time
+            audioPlayer.addEventListener("timeupdate", () => {
+
+            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            seekbar.value = progress;
+
+            currentTimeSpan.textContent = formatTime(audioPlayer.currentTime);
+          });
+
+            seekbar.addEventListener("input", () => {
+            const seekTo = (seekbar.value / 100) * audioPlayer.duration;
+            audioPlayer.currentTime = seekTo;
+          });
+
+              audioPlayer.addEventListener("loadedmetadata", () => {
+              durationSpan.textContent = formatTime(audioPlayer.duration);
+          });
+
+            function formatTime(seconds) {
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60);
+            return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+          }
+
+    function goBack() {
+        window.history.back(); 
+    }
+    
+    </script>
+</body>
+
+
+
+
+
+
+
+
