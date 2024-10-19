@@ -24,6 +24,7 @@ app.set("views", path.join(dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(dirname, "/public")));
+app.set("views", path.join(__dirname, "views"));
 
 app.get("/", (req, res) => {
     res.redirect("/program");
@@ -65,5 +66,5 @@ app.get("*", (req, res) => {
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
-    console.log("Server is listening to port", (PORT));
+    console.log("Server is listening to port", $=(PORT));
 });
