@@ -4,7 +4,7 @@ const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
 const Program = require("./models/programSchema.js");
-const MONGO_URL = process.env.MONGO_URL;
+const MONGO_URL = process.env.ATLASDB_URL;
 const ejsMate = require("ejs-mate");
 
 async function main() {
@@ -20,11 +20,10 @@ async function main() {
 main();
 
 app.set("view engine", "ejs");
-app.set("views", path.join(dirname, "views"));
+app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.engine("ejs", ejsMate);
-app.use(express.static(path.join(dirname, "/public")));
-app.set("views", path.join(__dirname, "views"));
+app.use(express.static(path.join(__dirname, "/public")));
 
 app.get("/", (req, res) => {
     res.redirect("/program");
